@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Verification</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .image-preview{
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #ccc ;
+            margin: 10px auto;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-preview img {
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Face Verification POC</h1>
+        <form id="face-verification-form">
+            <label for="image1">Upload First Image</label>
+            <div class="image-preview-container">
+                <div class="image-preview" id="preview1">No Image</div>
+                <button type="button" class="remove-button hidden" id="remove1" data-preview="preview1" data-input="image1">Remove</button>
+            </div>
+            <input type="file" id="image1" name="image1" accept="image/*" required>
+
+            <label for="image2">Upload Second Image</label>
+            <div class="image-preview-container">
+                <div class="image-preview" id="preview2">No Image</div>
+                <button type="button" class="remove-button hidden" id="remove2" data-preview="preview2" data-input="image2">Remove</button>
+            </div>
+            <input type="file" id="image2" name="image2" accept="image/*" required>
+
+            <button type="submit">Verify</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
